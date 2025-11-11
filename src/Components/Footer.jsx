@@ -148,7 +148,7 @@ const Footer = () => {
 
         {/* === Bottom Bar === */}
         <div className="flex flex-col sm:flex-row justify-between items-center pt-6 text-xs text-white text-center sm:text-left">
-          <p className="mb-2 sm:mb-0">© V POWER LOGISTICS 2024 | ALL RIGHTS RESERVED</p>
+          <p className="mb-2 sm:mb-0">© V POWER LOGISTICS 2025 | ALL RIGHTS RESERVED</p>
           <p>
             <a href="#" className="hover:text-white mr-4 relative group">
               PRIVACY POLICY

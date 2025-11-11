@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { FaTruck, FaPlane, FaGift } from "react-icons/fa";
+import { FaTruck, FaPlane, FaGift, FaPlay } from "react-icons/fa";
 import { GiDeliveryDrone, GiCargoShip } from "react-icons/gi";
 import { FaTrainSubway } from "react-icons/fa6";
 
@@ -66,7 +66,7 @@ const Hero = () => {
   return (
     <div>
       {/* HERO SECTION */}
-      <section className="relative w-full h-screen overflow-hidden mt-24">
+      <section className="relative w-full h-screen overflow-hidden mt-14 md:mt-14 lg:mt-14 xl:mt-24">
         <div className="absolute inset-0 z-0 transition-all duration-700">
           <img
             src={banners[current]}
@@ -76,10 +76,8 @@ const Hero = () => {
         </div>
 
         {/* Tracking Box */}
-
         <div className="absolute bottom-76 h-40 md:bottom-64 lg:md:bottom-86 xl:md:bottom-64 left-3 sm:left-6 md:left-8 lg:left-8 xl:left-16 z-20 w-[85%] sm:w-auto">
           <div className="rounded-lg shadow-lg p-0 w-full sm:w-[360px] overflow-hidden">
-            {/* Top Tabs */}
             <div className="flex">
               <button
                 onClick={() => setActiveTab("tracking")}
@@ -103,9 +101,7 @@ const Hero = () => {
               </button>
             </div>
 
-            {/* Always Visible Tracking Section */}
             <div className="bg-[#1E4E93] p-4 flex flex-col items-center sm:items-start">
-              {/* Input & Button */}
               <div className="flex flex-col sm:flex-row sm:space-x-2 w-full">
                 <input
                   type="text"
@@ -117,25 +113,17 @@ const Hero = () => {
                 </button>
               </div>
 
-              {/* Help Text */}
               <p className="text-[11px] text-gray-200 mt-2 text-center sm:text-left">
                 See the tracking id on shipping document.{" "}
                 <span className="text-[#F1604D] cursor-pointer hover:underline">
                   Help
                 </span>
               </p>
-
-              {/* Conditional Extra Content Below */}
-              {/* {activeTab === "rate" && (
-        <div className="text-gray-200 text-xs text-center w-full mt-3 border-t border-[#3E6BB8] pt-2">
-          Rate & Ship section coming soon.
-        </div>
-      )} */}
             </div>
           </div>
         </div>
 
-        {/* FREIGHT ICON SECTION (DESKTOP ONLY) */}
+        {/* FREIGHT ICON SECTION */}
         <div className="hidden md:block absolute bottom-96 md:bottom-32 lg:bottom-40 xl:bottom-24 left-1/2 -translate-x-1/2 w-[95%] md:w-[85%] z-30">
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 md:gap-2">
             {freightServices.map(({ icon: Icon, label }, i) => (
@@ -143,7 +131,7 @@ const Hero = () => {
                 key={i}
                 className="bg-white rounded-xl shadow-lg flex flex-col items-center justify-center py-6 px-4 hover:scale-105 hover:shadow-2xl transition-all duration-300 cursor-pointer group"
               >
-                <div className="p-4  flex items-center justify-center transition-all duration-300">
+                <div className="p-4 flex items-center justify-center transition-all duration-300">
                   <Icon
                     size={60}
                     className="text-[#0B407A] transition-all duration-300"
@@ -162,91 +150,73 @@ const Hero = () => {
       <div className="flex items-center justify-center font-['Inter']">
         <div className="max-w-8xl w-full bg-white rounded-2xl">
           <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 p-6 sm:p-12">
-            {/* LEFT SIDE (IMAGE + MOBILE ICONS ABOVE) */}
+            {/* LEFT SIDE (Image + Background + Play Button) */}
             <div className="relative flex flex-col items-center h-auto lg:h-[500px] p-4 sm:p-6 md:p-8 lg:p-10 lg:col-span-2 overflow-visible">
-              {/* MOBILE ICON SECTION (ABOVE IMAGE) */}
-              <div className="block md:hidden mb-10 -mt-72 w-full">
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
-                  {freightServices.map(({ icon: Icon, label }, i) => (
-                    <div
-                      key={i}
-                      className="bg-white rounded-xl shadow-md flex flex-col items-center justify-center py-4 px-2 hover:scale-105 hover:shadow-lg transition-all duration-300 cursor-pointer group"
-                    >
-                      <div className="p-3  rounded-full flex items-center justify-center group-hover:bg-[#0B407A] transition-all duration-300">
-                        <Icon
-                          size={50}
-                          className="text-[#0B407A] group-hover:text-white transition-all duration-300"
-                        />
-                      </div>
-                      <p className="font-semibold text-gray-800 mt-2 text-center text-xs sm:text-sm">
-                        {label}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
 
-
-              <div className="relative z-10 w-full max-w-[450px] h-[350px] sm:h-[420px] md:h-[480px] lg:h-[500px] rounded-tl-[100px] overflow-visible">
-        
-                <div className="relative flex flex-col lg:flex-row justify-center items-center h-auto lg:h-[300px] p-4 sm:p-6 md:p-8 lg:p-10 lg:col-span-2 overflow-visible">
-                 
-                  <div
+              {/* Decorative Background Left Shape */}
+         <div
                     className="absolute hidden lg:block inset-0 bg-[#1F4E79] z-0 overflow-hidden 
       rounded-l-3xl rounded-tl-[100px] w-[300px] h-[450px]
       transform translate-x-7 -translate-y-19 scale-110 shadow-inner"
                   ></div>
+
+                  {/* Decorative top-right shape */}
                   <div
                     className="absolute hidden lg:block bg-[#1F4E79] z-0 overflow-hidden 
       h-[200px] w-[200px] top-0 right-0 
       transform -translate-x-8 -translate-y-27 shadow-inner"
                   ></div>
 
-                  {/* Main Image Container */}
-                  <div className="relative z-10 w-full max-w-[450px] h-[350px] sm:h-[420px] md:h-[480px] lg:h-[500px] rounded-tl-[100px] rounded-2xl overflow-visible shadow-2xl">
-                    <img
-                      src={mainImage}
-                      alt="A woman working on a laptop, representing efficient logistics management."
-                      className="w-full h-full object-cover rounded-tl-[80px] rounded-bl-2xl"
-                      onError={(e) => {
-                        e.target.onerror = null;
-                        e.target.src =
-                          "https://placehold.co/400x500/dbeafe/1e3a8a?text=Logistics+Manager";
-                      }}
-                    />
+              {/* Image with Hover Effect and Play Button */}
+              <div className="relative group z-10 w-full -mt-36 max-w-[450px] h-[350px] sm:h-[420px] md:h-[480px] lg:h-[500px] rounded-tl-[100px] shadow-2xl">
+               <img
+                  src={mainImage}
+                  alt="A woman working on a laptop, representing efficient logistics management."
+                  className="w-full h-full object-cover rounded-tl-[80px] rounded-bl-2xl transition-all duration-500 group-hover:opacity-100"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src =
+                      'https://placehold.co/400x500/dbeafe/1e3a8a?text=Logistics+Manager';
+                  }}
+                />
 
-                    {/* 50K+ Satisfied Clients Box */}
-                    <div
-                      className="absolute top-[25%] left-[-30px] sm:left-[-70px] md:left-[-50px]
-        bg-white p-3 sm:p-4 rounded-tl-[50px] rounded-bl-xl 
-        shadow-xl border-l-4 border-[#1F4E79] w-[120px] sm:w-[130px] md:w-32 
-        text-center z-20 overflow-visible"
-                    >
-                      <p className="text-xl sm:text-2xl font-bold text-blue-900">
-                        50K+
-                      </p>
-                      <p className="text-xs sm:text-sm text-gray-600 mb-2">
-                        Satisfied Clients
-                      </p>
-                      <div className="flex justify-center -space-x-2">
-                        {clients.map((src, index) => (
-                          <img
-                            key={index}
-                            className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-white object-cover"
-                            src={src}
-                            alt={`Client profile ${index + 1}`}
-                            onError={(e) => {
-                              e.target.onerror = null;
-                              e.target.src = profilePlaceholder;
-                            }}
-                          />
-                        ))}
-                      </div>
-                    </div>
+                {/* Orange Play Button */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+                  <div className="bg-[#FD6309] p-6 sm:p-8 rounded-full shadow-2xl cursor-pointer hover:scale-110 transition-transform duration-300">
+                    <FaPlay className="text-white text-3xl sm:text-4xl ml-1" />
                   </div>
                 </div>
 
-                {/* EXPERIENCE BOX */}
+                {/* 50K+ Clients Box */}
+                <div
+                  className="absolute top-[25%] left-[-30px] sm:left-[-70px] md:left-[-50px]
+                  bg-white p-3 sm:p-4 rounded-tl-[50px] rounded-bl-xl 
+                  shadow-xl border-l-4 border-[#1F4E79] w-[120px] sm:w-[130px] md:w-32 
+                  text-center z-20 overflow-visible"
+                >
+                  <p className="text-xl sm:text-2xl font-bold text-blue-900">
+                    50K+
+                  </p>
+                  <p className="text-xs sm:text-sm text-gray-600 mb-2">
+                    Satisfied Clients
+                  </p>
+                  <div className="flex justify-center -space-x-2">
+                    {clients.map((src, index) => (
+                      <img
+                        key={index}
+                        className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-white object-cover"
+                        src={src}
+                        alt={`Client profile ${index + 1}`}
+                        onError={(e) => {
+                          e.target.onerror = null;
+                          e.target.src = profilePlaceholder;
+                        }}
+                      />
+                    ))}
+                  </div>
+                </div>
+
+                {/* Experience Box */}
                 <div className="absolute bottom-[25%] right-[-30px] sm:right-[-70px] md:right-[-50px] bg-white p-4 sm:p-5 rounded-tl-[50px] rounded-bl-xl shadow-2xl border-l-4 border-[#1F4E79] w-[120px] sm:w-[130px] md:w-32 text-center z-20">
                   <p className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black">
                     25
@@ -258,7 +228,7 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* RIGHT CONTENT SECTION */}
+            {/* RIGHT SIDE */}
             <div className="flex flex-col justify-center mb-12 lg:col-span-3">
               <h3 className="text-3xl font-bold text-[#1F4E79] mb-8">
                 Welcome To V Power Logistics
